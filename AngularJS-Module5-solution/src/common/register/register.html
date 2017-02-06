@@ -1,0 +1,68 @@
+<div class="container" novalidate>
+<h2 class="text-center">Registration form</h2>
+    <fieldset>
+    <form name="regForm" novalidate>
+	
+<!-- First name validation -->
+	<span>First Name:</span> <br>
+	<input type="text" name="firstName" size="50" 
+	placeholder="Your first name" 
+	required 
+	minlength="2" 
+	ng-model="reg.user.firstName">
+	<br>
+	<div class="regerror" ng-if="(regForm.firstName.$error.required || regForm.firstName.$error.minlength) && regForm.firstName.$touched">Enter your first name, please!</div>
+
+<!-- Second name validation -->
+    <span>Second Name:</span> <br>
+	<input type="text" name="secondName" size="50" 
+	placeholder="Your second name" 
+	required 
+	minlength="2" 
+	ng-model="reg.user.secondName">
+	<br>
+	<div class="regerror" ng-if="(regForm.secondName.$error.required || regForm.secondName.$error.minlength) && regForm.secondName.$touched">Enter your second name, please!</div>
+	
+<!-- E-mail address validation -->
+    <span>Your e-mail:</span> <br>
+	<input type="email" name="email" size="50" 
+	placeholder="Enter your e-mail" 
+	required 
+	ng-model="reg.user.email">
+	<br>
+	<div class="regerror" ng-if="regForm.email.$invalid && regForm.email.$touched">Enter, please, valid e-mail ex: email@email.com</div>
+<!-- Telephone validation -->
+    <span>Your phone number:</span> <br>
+	<input type="input" name="phone" size="50" 
+	placeholder="Your phone number (####-###-###)" 
+	required
+	pattern="(\d{4})-(\d{3})-(\d{3})" 
+	ng-model="reg.user.phone">
+	<br>
+	<div class="regerror" ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone must be in a format ####-###-###</div>
+<!-- Favorite dish validation --> 
+    <span>What is your favorive dish:</span> <br>
+	<input type="input" name="dish" size="50" placeholder="Your favorite dish (enter in format of short name (A1, F7)" 
+	required
+	ng-minlength="2"
+	ng-maxlength='4' 
+	ng-model="reg.user.dish">
+	<br>
+        <div class="mistake" ng-if="reg.error">
+          Hmm, try something else, like A1 or C1 or L1
+        </div>
+        <div class="success" ng-if="reg.success">
+          Your information has been saved.
+        </div>
+	
+<!-- Go button ;) -->
+
+    <button 
+        ng-disabled="regForm.$invalid" 
+        ng-click="reg.getUserData()">
+    	Submit
+    </button>
+    
+	</form>
+	</fieldset>
+</div>

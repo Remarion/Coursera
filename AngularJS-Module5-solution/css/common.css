@@ -1,0 +1,41 @@
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}
+
+.ui-view-placeholder {
+    margin-top: 60px;
+}
+.regerror {
+    color: red;
+    margin-bottom: 5px;
+}
+input {
+    color: black;
+    margin-bottom: 5px;
+}
+#lastform {
+    margin-bottom: 15px;
+}
+button {
+    margin-top: 10px;
+    color: black;
+}
+.mistake {
+    color: red;
+}
+.success {
+    color: green;
+}
